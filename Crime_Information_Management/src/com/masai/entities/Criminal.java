@@ -1,6 +1,7 @@
 package com.masai.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Criminal {
 	private int criminal_id;
@@ -9,15 +10,18 @@ public class Criminal {
 	private String identifying_mark;
 	private LocalDate first_arrest_date;
 	private String arrested_from_ps_area;
+	private List<Integer> crimeIds;
 
 	public Criminal(int criminal_id, LocalDate dob, String gender, String identifying_mark, LocalDate first_arrest_date,
-			String arrested_from_ps_area) {
+			String arrested_from_ps_area, List<Integer> crimeIds) {
+		super();
 		this.criminal_id = criminal_id;
 		this.dob = dob;
 		this.gender = gender;
 		this.identifying_mark = identifying_mark;
 		this.first_arrest_date = first_arrest_date;
 		this.arrested_from_ps_area = arrested_from_ps_area;
+		this.crimeIds = crimeIds;
 	}
 
 	public int getCriminalId() {
@@ -66,6 +70,22 @@ public class Criminal {
 
 	public void setArrested_from_ps_area(String arrested_from_ps_area) {
 		this.arrested_from_ps_area = arrested_from_ps_area;
+	}
+
+	public int getCriminal_id() {
+		return criminal_id;
+	}
+
+	public void setCriminal_id(int criminal_id) {
+		this.criminal_id = criminal_id;
+	}
+
+	public List<Integer> getCrimeIds() {
+		return crimeIds;
+	}
+
+	public void setCrimeIds(List<Integer> crimeIds) {
+		this.crimeIds = crimeIds;
 	}
 
 	@Override
