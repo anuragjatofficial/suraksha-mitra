@@ -1,5 +1,7 @@
 package com.masai.service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -9,7 +11,7 @@ import com.masai.exceptions.*;
 
 
 public interface CrimeServices {
-
+	public String addNewCrime(int id ,List<Integer> criminals,Map<Integer,Crime> crimes,Scanner sc)throws InvalidInputSelectionException, FileNotFoundException, IOException;
 	public String updateCrimeDetails(int id, Crime crime, Map<Integer, Crime> crimes)throws CrimeNotFoundException;
 	public String updateCriminalDetails(int id, Criminal criminal,Map<Integer,Criminal> criminals)throws CriminalNotFoundException;
 	
