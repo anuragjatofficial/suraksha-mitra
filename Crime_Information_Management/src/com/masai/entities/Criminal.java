@@ -1,10 +1,12 @@
 package com.masai.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Criminal {
+public class Criminal implements Serializable {
 	private int criminal_id;
+	private String name;
 	private LocalDate dob;
 	private String gender;
 	private String identifying_mark;
@@ -12,10 +14,10 @@ public class Criminal {
 	private String arrested_from_ps_area;
 	private List<Integer> crimeIds;
 
-	public Criminal(int criminal_id, LocalDate dob, String gender, String identifying_mark, LocalDate first_arrest_date,
-			String arrested_from_ps_area, List<Integer> crimeIds) {
-		super();
+	public Criminal(int criminal_id, String name, LocalDate dob, String gender, String identifying_mark,
+			LocalDate first_arrest_date, String arrested_from_ps_area, List<Integer> crimeIds) {
 		this.criminal_id = criminal_id;
+		this.name = name;
 		this.dob = dob;
 		this.gender = gender;
 		this.identifying_mark = identifying_mark;
@@ -26,6 +28,14 @@ public class Criminal {
 
 	public int getCriminalId() {
 		return criminal_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setCriminalId(int criminal_id) {

@@ -63,7 +63,7 @@ public class CrimeservicesImpl implements CrimeServices ,Serializable{
 			psa += "Pune";
 			break;
 		case 4:
-			psa += "Naagpur";
+			psa += "Nagpur";
 			break;
 			default:
 				throw new InvalidInputSelectionException("Invalid input");
