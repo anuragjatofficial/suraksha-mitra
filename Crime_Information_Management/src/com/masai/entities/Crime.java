@@ -1,10 +1,11 @@
 package com.masai.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.*;
 
 import com.masai.Main;
-public class Crime {
+public class Crime implements Serializable{
 	private int crimeId;
 	private String crimeType;
 	private String decscription;
