@@ -100,9 +100,11 @@ public class Criminal implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Criminal [crimeId=" + criminal_id + ", dob=" + dob + ", gender=" + gender + ", identifying_mark="
-				+ identifying_mark + ", first_arrest_date=" + first_arrest_date + ", arrested_from_ps_area="
-				+ arrested_from_ps_area + "]";
+		return "Criminal [criminal_id=" + criminal_id + ", name=" + name + ", dob=" + dob + ", gender=" + gender
+				+ ", identifying_mark=" + identifying_mark + ", first_arrest_date=" + first_arrest_date
+				+ ", arrested_from_ps_area=" + arrested_from_ps_area + "]";
 	}
+
+	
 
 }
