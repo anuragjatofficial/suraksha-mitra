@@ -22,9 +22,8 @@ public class Main {
 		System.out.println("Enter your password");
 		String password = sc.next();
 		if (username.equals(Admin.username) && password.equals(Admin.password)) {
-			System.out.println("Welocome Admin How can I help you ?");
-			return true;
 
+			return true;
 		} else {
 			return false;
 		}
@@ -40,27 +39,31 @@ public class Main {
 				throw new InvalidLoginCrediantials("Invalid Credentials");
 			} else {
 				System.out.println("Logged in succesfully : )");
+				System.out.println("-------------------------------------------");
+				
 			}
 			boolean flag = true;
 			while (flag) {
-				System.out.println("1. Add a new crime");
+				System.out.println("Welocome Admin , how can I help you ?");
+				System.out.println("-------------------------------------------");
+				System.out.println("Press 1 : Add a new crime");
 				System.out.print("");
-				System.out.println("2. Update crime details");
+				System.out.println("Press 2 : Update crime details");
 				System.out.print("");
-				System.out.println("3. Add a new criminal");
+				System.out.println("Press 3 : Add a new criminal");
 				System.out.print("");
-				System.out.println("4. Update criminal details");
+				System.out.println("Press 4 : Update criminal details");
 				System.out.print("");
-				System.out.println("5. Assign criminals to crime");
+				System.out.println("Press 5 : Assign criminals to crime");
 				System.out.print("");
-				System.out.println("6. Remove criminals from crime");
+				System.out.println("Press 6 : Remove criminals from crime");
 				System.out.print("");
-				System.out.println("7. Delete Crime using crimeId");
+				System.out.println("Press 7 : Delete Crime using crimeId");
 				System.out.print("");
-				System.out.println("8. Delete Criminal using criminal Id");
+				System.out.println("Press 8 : Delete Criminal using criminal Id");
 				System.out.print("");
-				System.out.println("9. Logout");
-				System.out.print("");
+				System.out.println("Press 9 : Logout");
+				System.out.println("--------------------------------------------");
 				int num = sc.nextInt();
 				switch (num) {
 				case 1:
@@ -323,6 +326,7 @@ public class Main {
 			boolean flag = true;
 			while (flag) {
 				System.out.println("Welcome to crime Management System .. !");
+				System.out.println("---------------------------------------");
 				System.out.println("Choose one of them");
 				System.out.println("1. Admin Login");
 				System.out.println("2. Public services");
@@ -364,14 +368,18 @@ public class Main {
 	private static void publicServices(Scanner sc, Map<Integer, Crime> crimes, Map<Integer, Criminal> criminals) {
 		try {
 			boolean flag = true;
-			while(flag) {
-				System.out.println("welcome to public service section :)");
-				System.out.println("");
+			while (flag) {
+				System.out.println("--------------------------------------");
+				System.out.println("welcome to public service section :)" + "\t");
+				System.out.println("--------------------------------------");
 				System.out.println("Press 1 : view all crimes");
 				System.out.println("Press 2 : view all crimes in your area");
 				System.out.println("Press 3 : search criminal by name");
+//				System.out.println("Press 1 : view all crimes");
 				System.out.println("Press 4 : search crime by description");
 				System.out.println("Press 5 : go back to main sectoin");
+				System.out.println("Press 6 : View all criminals");
+				System.out.println("--------------------------------------");
 				int choice = sc.nextInt();
 				switch (choice) {
 				case 1:
@@ -382,13 +390,16 @@ public class Main {
 					System.out.println(viewAllCrimesByArea(crimes, sc));
 					break;
 				case 3:
-					System.out.println(searchCriminalByName(criminals,sc));
+					System.out.println(searchCriminalByName(criminals, sc));
 					break;
 				case 4:
-					System.out.println(searchCrimeDecsription(crimes,sc));
+					System.out.println(searchCrimeDecsription(crimes, sc));
 					break;
 				case 5:
 					flag = false;
+					break;
+				case 6:
+					System.out.println(viewAllCriminals(criminals));
 					break;
 				default:
 					throw new InvalidInputSelectionException("Invalid input :(");
@@ -400,33 +411,44 @@ public class Main {
 		}
 	}
 
+	private static String viewAllCriminals(Map<Integer, Criminal> criminals) {
+		System.out.println("All criminals List : )");
+		System.out.println("------------------------");
+		String bag = "";
+		for (Entry<Integer, Criminal> entry : criminals.entrySet()) {
+			Criminal c = entry.getValue();
+			bag += c + "\n";
+		}
+		return bag;
+	}
+
 	private static String searchCrimeDecsription(Map<Integer, Crime> crimes, Scanner sc) {
 //		paused here 
 		System.out.println("Search crime description: ");
 		sc.nextLine();
 		String name = sc.nextLine();
 		String bag = "No results found for " + name;
-		for(Map.Entry<Integer,Crime> entry : crimes.entrySet()){
+		for (Map.Entry<Integer, Crime> entry : crimes.entrySet()) {
 			Crime c = entry.getValue();
-			if(c.getDecscription().equals(name)) {
+			if (c.getDecscription().equals(name)) {
 				bag = "";
-				bag += c+"\n";
+				bag += c + "\n";
 			}
 		}
 		return bag;
 	}
-	
+
 	private static String searchCriminalByName(Map<Integer, Criminal> criminals, Scanner sc) {
 //		paused here 
 		System.out.println("Search criminal name : ");
 		sc.nextLine();
 		String name = sc.nextLine();
 		String bag = "No results found for " + name;
-		for(Map.Entry<Integer,Criminal> entry : criminals.entrySet()){
+		for (Map.Entry<Integer, Criminal> entry : criminals.entrySet()) {
 			Criminal c = entry.getValue();
-			if(c.getName().equals(name)) {
+			if (c.getName().equals(name)) {
 				bag = "";
-				bag += c+"\n";
+				bag += c + "\n";
 			}
 		}
 		return bag;
