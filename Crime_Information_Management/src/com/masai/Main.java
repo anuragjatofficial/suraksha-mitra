@@ -325,12 +325,14 @@ public class Main {
 		try {
 			boolean flag = true;
 			while (flag) {
-				System.out.println("Welcome to crime Management System .. !");
-				System.out.println("---------------------------------------");
-				System.out.println("Choose one of them");
-				System.out.println("1. Admin Login");
-				System.out.println("2. Public services");
-				System.out.println("3. Exit app");
+				System.out.println("\u001B[0m"+"\u001B[41m"+"Welcome to Suraksha Mitra (The crime Management System )"+ " .. !"+"\u001B[0m");
+				System.out.println("\u001B[33m"+"---------------------------------------");
+				System.out.println("Choose one of the services");
+				System.out.println("---------------------------");
+				System.out.println("Press 1: Admin Login");
+				System.out.println("Press 2: Public services");
+				System.out.println("Press 3: Exit app");
+				System.out.println("---------------------------");
 				int n = sc.nextInt();
 				switch (n) {
 				case 1:
@@ -370,8 +372,8 @@ public class Main {
 			boolean flag = true;
 			while (flag) {
 				System.out.println("--------------------------------------");
-				System.out.println("welcome to public service section :)" + "\t");
-				System.out.println("--------------------------------------");
+				System.out.println("\u001B[0m"+"\u001B[41m"+"welcome to public service section :)" + "\u001B[0m");
+				System.out.println("\u001B[33m"+"--------------------------------------");
 				System.out.println("Press 1 : view all crimes");
 				System.out.println("Press 2 : view all crimes in your area");
 				System.out.println("Press 3 : search criminal by name");
@@ -412,8 +414,8 @@ public class Main {
 	}
 
 	private static String viewAllCriminals(Map<Integer, Criminal> criminals) {
-		System.out.println("All criminals List : )");
-		System.out.println("------------------------");
+		System.out.println("\u001B[0m"+"\u001B[41m"+"All criminals List : )"+"\u001B[0m");
+		System.out.println("\u001B[33m"+"------------------------");
 		String bag = "";
 		for (Entry<Integer, Criminal> entry : criminals.entrySet()) {
 			Criminal c = entry.getValue();
@@ -455,6 +457,8 @@ public class Main {
 	}
 
 	private static String viewAllCrimes(Map<Integer, Crime> crimes) {
+		System.out.println("\u001B[0m"+"\u001B[41m"+"All crimes " + "\u001B[0m");
+		System.out.println("-------------");
 		String bag = "";
 		for (Map.Entry<Integer, Crime> entry : crimes.entrySet()) {
 			Crime c = entry.getValue();
