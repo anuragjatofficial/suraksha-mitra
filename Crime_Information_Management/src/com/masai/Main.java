@@ -57,7 +57,9 @@ public class Main {
 				System.out.print("");
 				System.out.println("7. Delete Crime using crimeId");
 				System.out.print("");
-				System.out.println("8. Logout");
+				System.out.println("8. Delete Criminal using criminal Id");
+				System.out.print("");
+				System.out.println("9. Logout");
 				System.out.print("");
 				int num = sc.nextInt();
 				switch (num) {
@@ -74,7 +76,7 @@ public class Main {
 					updateCriminalDetais(criminals, sc, d2);
 					break;
 				case 5:
-					assignCriminalsToCrime(crimes, criminals, sc); // last working line
+					assignCriminalsToCrime(crimes, criminals, sc);
 					break;
 				case 6:
 					unassignCriminalsFromCrime(crimes, criminals, sc);
@@ -306,7 +308,7 @@ public class Main {
 			 * Crime(id,crimeType,description,psa,crimeDate,victim,criminals);
 			 * crimes.put(id, crime);
 			 */
-			System.out.println(crimes);
+//			System.out.println(crimes);
 			System.out.println(output);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -350,8 +352,8 @@ public class Main {
 				coos.writeObject(crimes);
 				croos.close();
 				coos.close();
-				System.out.println(criminals);
-				System.out.println(crimes);
+//				System.out.println(criminals);
+//				System.out.println(crimes);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
@@ -441,7 +443,7 @@ public class Main {
 
 	private static String viewAllCrimesByArea(Map<Integer, Crime> crimes, Scanner sc) {
 
-		System.out.println("Choose Updated Police staion area :" + "\n" + "Press 1 : for Mumbai" + "\n"
+		System.out.println("Choose your Police staion area :" + "\n" + "Press 1 : for Mumbai" + "\n"
 				+ "Press 2 : for Thane" + "\n" + "Press 3 : for Pune" + "\n" + "Press 4 : for Nagpur");
 		int choice = sc.nextInt();
 		String psa = "";
