@@ -1,5 +1,5 @@
 
-# Crime Information Management System
+# Suraksha mitra (Crime Information Management System)
 
 <img src="https://images.projectsgeek.com/2016/01/Crime-Investigation-Management-System.jpg" alt="java" width="400" height="300"/>
 
